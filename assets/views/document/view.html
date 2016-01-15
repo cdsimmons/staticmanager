@@ -1,0 +1,79 @@
+<header>
+	<div class="container">
+		<a href="/"><h2 class="heading">Static Manager</h2></a>
+	</div>
+</header>
+
+<div class="container ng-cloak">
+	<div class="ng-scope">
+		<section class="well">
+			<div ng-controller="TabsCtrl">
+				<tabset>
+					<tab heading="Details">
+						<p>Title = {{document.title}}</p>
+						<p>Edit URL = <a href="http://{{host}}/{{version}}/view/{{document.id}}" target="_blank">http://{{host}}/{{version}}/view/{{document.id}}</a></p>
+						<p>CMS URL = <a href="http://{{host}}/{{version}}/cms/{{document.id}}" target="_blank">http://{{host}}/{{version}}/cms/{{document.id}}</a></p>
+						<p>JSON URL = <a href="http://{{host}}/{{apiRoot}}/document/{{document.id}}" target="_blank">http://{{host}}/{{apiRoot}}/document/{{document.id}}</a></p>
+						<p>HTML to include = <code>&lt;script&nbsp;src="http://{{host}}/{{apiRoot}}/js/{{document.publicId}}"&gt;&lt;/script&gt;</code></p>
+					</tab>
+					<tab heading="About">
+						<p>Static Manager turns your JSON into editable input fields, suitable for client content manaagement. Useful for simple websites, prototypes, or just content gathering from clients. This remote CMS provides simple editing for your clients, and quick development for your developers.</p>
+						<p>However, quicker does not always mean better. This CMS solution does not provide dropdowns for your clients, nor does it provide any WYSIWYG editor. It's just simple text fields, checkboxes, images, and repeatable sections.</p>
+					</tab>
+					<tab heading="How To">
+						<p>In order to get your site working with Static Manager, just follow the steps below:</p>
+							<ol>
+								<li>Input a title, your JSON, and hit Submit below</li>
+								<li>Add in the provided HTML to your site's header tag</li>
+								<li>Use <a href="http://handlebarsjs.com/">Handlebars</a> placeholders to render the values onto the page. e.g. {{placeholder}}</li>
+								<li>Add the class .sm-render to the containers of these placeholders</li>
+							</ol>
+							<p>That's it! You can now send your clients the provided CMS URL and they can change the content of their website.</p>
+					</tab>
+				</tabset>
+			</div>
+		</section>
+		<section class="well">
+			<div ng-controller="TabsCtrl">
+				<tabset>
+					<tab heading="CMS">
+						<form json-cms>
+						</form>
+						<div ng-switch on="publishable">
+						    <div ng-switch-when="true">
+								<button class="btn btn-success" ng-click="publish()">Publish</button>
+						    </div>
+						    <div ng-switch-default>
+								<button class="btn btn-success" disabled="disabled">Published</button>
+						    </div>
+						</div>
+					</tab>
+					<tab heading="JSON">
+						<form>
+							<div class="form-group">
+								<textarea id="json" name="json" placeholder="" rows="20" ng-model="document.draft" class="form-control valid-{{validJson}}" required json-pretty></textarea>
+							</div>
+						</form>
+						<div ng-switch on="publishable">
+						    <div ng-switch-when="true">
+								<button class="btn btn-success" ng-click="publish()">Publish</button>
+						    </div>
+						    <div ng-switch-default>
+								<button class="btn btn-success" disabled="disabled">Published</button>
+						    </div>
+						</div>
+					</tab>
+					<tab heading="Options">
+						<form>
+							<div class="form-group">
+       							<label for="site">Site</label>
+								<input type="text" id="site" name="site" class="form-control" ng-model="document.options.site"/>
+							</div>
+						</form>
+						<p>Changes here are automatically saved.</p>
+					</tab>
+				</tabset>
+			</div>
+		</section>
+	</div>
+</div>

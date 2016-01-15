@@ -1,0 +1,51 @@
+// Angular styles
+.nav, .pagination, .carousel a { cursor: pointer; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.disable-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+[ng-click], [data-ng-click], [x-ng-click] {
+  cursor: pointer;
+  .disable-select();
+}
+
+// Custom app styles
+.strikethru { text-decoration: line-through; }
+.margin-top-sm { margin-top: 5px; }
+.margin-top    { margin-top: 10px; }
+.margin-top-lg { margin-top: 20px; }
+.no-margin-bot { margin-bottom: 0; }
+
+
+.input-group-btn > .btn + .btn {
+  margin-left: 0;
+}
+
+// Image
+.modal-backdrop {
+	bottom: -10000px;
+}
+
+.modal {
+	text-align: center;
+
+	.modal-dialog {
+		display: inline-block;
+		width: auto;
+
+		img {
+			max-width: 100%;
+  			width: auto;
+		}
+	}
+}

@@ -1,0 +1,6 @@
+**/.tmp/**
+**/views/**
+**/assets/**
+./www/***
+out.log
+start.bat

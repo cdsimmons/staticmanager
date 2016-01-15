@@ -1,0 +1,46 @@
+html {
+	background-color: @color-blue;
+}
+
+header {
+	background-color: @color-blue-dark;
+	margin-bottom: @dimension-padding * 2;
+
+	.heading {
+		color: #ffffff;
+		margin-bottom: @dimension-padding;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+}
+
+.nav-tabs {
+	margin-bottom: @dimension-padding;
+}
+
+.fill-width {
+	width: 100%;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+

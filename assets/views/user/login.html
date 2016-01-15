@@ -1,0 +1,32 @@
+<header>
+	<div class="container">
+		<h2 class="heading">Static Manager</h2>
+	</div>
+</header>
+
+<div class="container ng-cloak">
+	<div class="ng-scope">
+		<section class="well">
+			<div ng-controller="TabsCtrl">
+				<tabset>
+					<tab heading="Welcome">
+						<p>Welcome to Static Manager, the site that lets you build a simple CMS from JSON.</p>
+					</tab>
+					<tab heading="About">
+						<p>Static Manager turns your JSON into editable input fields, suitable for client content manaagement. Useful for simple websites, prototypes, or just content gathering from clients. This remote CMS provides simple editing for your clients, and quick development for your developers.</p>
+						<p>However, quicker does not always mean better. This CMS solution does not provide dropdowns for your clients, nor does it provide any WYSIWYG editor. It's just simple text fields, checkboxes, images, and repeatable sections.</p>
+					</tab>
+				</tabset>
+			</div>
+		</section>
+		<section class="well">
+			<form role="form" name="loginForm" ng-submit="authenticate()">
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input type="password" id="password" name="password" placeholder="" ng-model="user.password" class="form-control" required />
+				</div>
+				<button type="submit" class="btn btn-success">Login</button>
+			</form>
+		</section>
+	</div>
+</div>

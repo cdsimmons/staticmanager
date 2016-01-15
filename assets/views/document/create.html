@@ -1,0 +1,56 @@
+<header>
+	<div class="container">
+		<a href="/"><h2 class="heading">Static Manager</h2></a>
+	</div>
+</header>
+
+<div class="container ng-cloak">
+	<div class="ng-scope">
+		<section class="well" ng-controller="CollapseCtrl">
+			<tabset>
+				<tab heading="Welcome">
+					<p>Welcome to Static Manager, the site that lets you build a simple CMS from JSON.</p>
+				</tab>
+				<tab heading="About">
+					<p>Static Manager turns your JSON into editable input fields, suitable for client content manaagement. Useful for simple websites, prototypes, or just content gathering from clients. This remote CMS provides simple editing for your clients, and quick development for your developers.</p>
+					<p>However, quicker does not always mean better. This CMS solution does not provide dropdowns for your clients, nor does it provide any WYSIWYG editor. It's just simple text fields, checkboxes, images, and repeatable sections.</p>
+				</tab>
+				<tab heading="How To">
+					<p>In order to get your site working with Static Manager, just follow the steps below:</p>
+						<ol>
+							<li>Input a title, your JSON, and hit Submit below</li>
+							<li>Add in the provided HTML to your site's header tag</li>
+							<li>Use <a href="http://handlebarsjs.com/">Handlebars</a> placeholders to render the values onto the page. e.g. {{placeholder}}</li>
+							<li>Add the class .sm-render to the containers of these placeholders</li>
+						</ol>
+						<p>That's it! You can now send your clients the provided CMS URL and they can change the content of their website.</p>
+				</tab>
+				<tab heading="Get Started">
+					<p>To make it easier, we've put together some common templates for you to use. Just click the buttons below and see what they generate!</p>
+					<div class="row">
+						<div class="col-xs-6 col-sm-4">
+							<button class="btn btn-success fill-width" ng-click="showExample('simpleWebsite')">{{examples.simpleWebsite.title}}</button>
+						</div>
+						<div class="col-xs-6 col-sm-4">
+							<button class="btn btn-success fill-width" ng-click="showExample('complexWebsite')">{{examples.complexWebsite.title}}</button>
+						</div>
+						<div class="col-xs-6 col-sm-4">Test</div>
+					</div>
+				</tab>
+			</tabset>
+		</section>
+		<section class="well">
+			<form role="form" name="documentForm" ng-submit="create()">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" id="title" name="title" placeholder="" ng-model="document.title" class="form-control" required />
+				</div>
+				<div class="form-group">
+					<label for="json">JSON</label>
+					<textarea id="json" name="json" placeholder="" rows="20" ng-model="document.draft" class="form-control" required json-pretty></textarea>
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</section>
+	</div>
+</div>
